@@ -157,23 +157,66 @@ function playRound(computer, player) {
   const CS = document.querySelector('#cpu-score');
   const whoWon = document.querySelector('.instructions p');
 
-  if (result.charAt(0) === 'P' && playerScore < 5) {
+  if (result.charAt(0) === 'P') {
     playerScore++;
     PS.textContent = playerScore;
-  } else if (playerScore == 5) {
-    playerScore = 0;
-    computerScore = 0;
-    PS.textContent = playerScore;
-    CS.textContent = computerScore;
-  }
-
-  if (result.charAt(0) === 'C' && computerScore < 5) {
+    whoWon.textContent = 'Player won!';
+  } else if (result.charAt(0) === 'C') {
     computerScore++;
     CS.textContent = computerScore;
-  } else if (computerScore == 5) {
-    computerScore = 0;
+    whoWon.textContent = 'Computer won!';
+  } else {
+    whoWon.textContent = 'Draw!';
+  }
+
+  if (playerScore == 5) {
     playerScore = 0;
+    computerScore = 0;
+
     PS.textContent = playerScore;
     CS.textContent = computerScore;
+
+    const playerSide = document.querySelector('.player-side');
+    const playerIcon = document.querySelector('.player-side i:first-child');
+    playerIcon.remove();
+    const newPIcon = document.createElement('i');
+    newPIcon.classList.add('fas', 'fa-user');
+    playerSide.prepend(newPIcon);
+
+    const cpuSide = document.querySelector('.cpu-side');
+    const cpuIcon = document.querySelector('.cpu-side i:first-child');
+    cpuIcon.remove();
+    const newCIcon = document.createElement('i');
+    newCIcon.classList.add('fas', 'fa-tv');
+    cpuSide.prepend(newCIcon);
+
+    newPIcon.setAttribute('style', 'color:#66ff00');
+    newCIcon.setAttribute('style', 'color:red;');
+
+    whoWon.textContent = 'Player achieved 5 points first!';
+  } else if (computerScore == 5) {
+    playerScore = 0;
+    computerScore = 0;
+
+    PS.textContent = playerScore;
+    CS.textContent = computerScore;
+
+    const playerSide = document.querySelector('.player-side');
+    const playerIcon = document.querySelector('.player-side i:first-child');
+    playerIcon.remove();
+    const newPIcon = document.createElement('i');
+    newPIcon.classList.add('fas', 'fa-user');
+    playerSide.prepend(newPIcon);
+
+    const cpuSide = document.querySelector('.cpu-side');
+    const cpuIcon = document.querySelector('.cpu-side i:first-child');
+    cpuIcon.remove();
+    const newCIcon = document.createElement('i');
+    newCIcon.classList.add('fas', 'fa-tv');
+    cpuSide.prepend(newCIcon);
+
+    newPIcon.setAttribute('style', 'color:red;');
+    newCIcon.setAttribute('style', 'color:#66ff00');
+    whoWon.textContent = 'Computer achieved 5 points first!';
   }
 }
