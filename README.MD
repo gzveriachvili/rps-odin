@@ -1,1 +1,1 @@
-Rock, paper scissors game written in JS for the Odin Project.
+A simple rock, paper, scissors game with UI written in JavaScript for the Odin Project course.

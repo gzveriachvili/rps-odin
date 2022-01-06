@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RPS</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="icon" type="image/x-icon" href="img/favicon.png" />
+    <script
+      src="https://kit.fontawesome.com/26ce6e3e48.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/script.js" defer></script>
+  </head>
+  <body>
+    <div class="title-section">
+      <h1>Rock Paper Scissors</h1>
+    </div>
+    <div class="wrapper">
+      <div class="content">
+        <div class="instructions">
+          <p>Click on the buttons to play</p>
+          <p>First to get 5 points wins</p>
+        </div>
+        <div class="score">
+          <div class="player-side">
+            <i class="fas fa-user"></i>
+            <p class="player-text">Player: <span id="player-score">0</span></p>
+          </div>
+          <div class="cpu-side">
+            <i class="fas fa-tv"></i>
+            <p class="cpu-text">Computer: <span id="cpu-score">0</span></p>
+          </div>
+        </div>
+        <audio id="audio" src="./sound/button-28.wav" autoplay="false"></audio>
+        <div class="play-buttons">
+          <button id="btn-rock"><i class="fas fa-fist-raised"></i></button>
+          <button id="btn-paper"><i class="fas fa-hand-spock"></i></button>
+          <button id="btn-scissors"><i class="fas fa-hand-peace"></i></button>
+        </div>
+      </div>
+    </div>
+    <div class="footer">Copyright © 2022 gzveriachvili</div>
+  </body>
+</html>
